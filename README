@@ -1,0 +1,76 @@
+This is extension is a standalone version of the tclkit [zlib] command/extension.
+
+See http://wiki.tcl.tk/zlib for command syntax.
+
+This package is a freely available open source package.  You can do
+virtually anything you like with it, such as modifying it, redistributing
+it, and selling it either in whole or in part.  See the file
+"license.terms" for complete information. 
+
+It was created by Pascal Scheffers <pascal@scheffers.net> by bundling
+zlib.c by Jean-Claude Wippler from the tclkit sources, zlib and
+banging on sampleextension until it worked. Feel free to do with it as
+you like, as long as you honor the original licenses and zlib. zlib.c
+was placed in the public domain by JCW.
+
+Have fun.
+
+18 August 2004
+
+- Pascal.
+
+UNIX or Msys+Mingw simple build
+===============================
+
+The really simple way of building this package is
+
+	$ cd zlib
+	$ /path/to/my/tclsh build.tcl
+
+This should auto detect the tclConfig.sh to be used for building the
+extension. If that part fails, you can also specify the directory
+which holds tclConfig.sh (for example /usr/local/lib)
+
+	$ cd zlib
+	$ /path/to/my/tclsh build.tcl /usr/local/lib
+
+UNIX BUILD
+==========
+
+Before building the extension, libz(.a) needs to be available. Most
+Unix systems have libz installed, so you can just run the configure
+script and then run make. If you do not have libz installed (configure
+will complain about it.), you should build the zlib copy provided with
+this extension in the zlib directory.
+
+For more information about the build process, see
+the tcl/unix/README file in the Tcl src dist. The following minimal
+example will install the extension in the /opt/tcl directory.
+
+	$ cd zlib
+	$ ./configure --prefix=/opt/tcl
+	$ make
+	$ make install
+
+This example will build the zlib as well:
+
+	$ cd zlib/zlib
+	$ ./configure
+	$ make
+	$ cd ..
+	$ ./configure --prefix=/opt/tcl
+	$ make
+	$ make install
+
+
+WINDOWS BUILD
+=============
+
+The recommended method to build extensions under windows is to use the
+Msys + Mingw build process. This provides a Unix-style build while
+generating native Windows binaries. Using the Msys + Mingw build tools
+means that you can use the same configure script as per the Unix build
+to create a Makefile.
+
+Building with VC++ has not been tested
+
