@@ -1,1 +1,60 @@
+$Id: KNOTES,v 1.2 2007-12-22 06:34:03 karl Exp $
+
+This is a Tcl interface to zlib that I found on the net.  I think it might
+hae been stripped out of the Tcl virtual file system (tclvfs).
+
+CONIGURE
+--------
+
+Configure it like this:
+
 ./configure --with-tcl=/usr/local/lib/tcl8.4 --with-tclinclude=/usr/local/include/tcl8.4
+
+USE
+---
+
+To use:
+
+	package require zlib
+
+	zlib subcommand ?data?
+
+It adds a new command, zlib.
+
+zlib has arguments.  The first argument can be one of:
+
+	adler32
+
+	crc32 - compute a checksum
+
+	compress - one way to compress stuff
+
+	deflate - the other way to compress stuff
+
+	decompress - one way to decompress stuff
+
+	inflate - the other way to decompress stuff
+
+	sdecompress
+
+	sinflate
+
+
+
+The FAA ASDI XML feed's compressed data can be decompressed with:
+
+	set decompPayload [zlib decompress $payload]
+
+
+
+The sdecompress and sinflate subcommands are, I think, file-oriented.
+
+It works with zlib, the home page of which is http://www.zlib.net.
+
+This is the same zlib that's known on FreeBSD as libz.
+
+TODO
+----
+
+The TEA version is pretty old.  It could stand to be updated.  Or see
+if tclvfs isn't the same thing and start using that instead.
