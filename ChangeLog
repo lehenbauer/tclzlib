@@ -1,3 +1,10 @@
+
+$Id$
+
+2009-03-31  Karl Lehenbauer
+    * Builds cleanly under Debian.  Added README.Debian file with instructions
+      on how to configure.
+
 2004-08-18  Pascal Scheffers  <pascal@scheffers.net>
 
 	* Initial version.

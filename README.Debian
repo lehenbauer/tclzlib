@@ -1,0 +1,8 @@
+#
+# Debian configure command for tclzlib
+#
+# ...may work with other Linuxes; I don't know.
+#
+# $Id$
+#
+./configure --with-tcl=/usr/lib/tcl8.4 --with-tclinclude=/usr/include/tcl8.4 --enable-symbols
