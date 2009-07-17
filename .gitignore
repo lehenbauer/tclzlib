@@ -1,0 +1,9 @@
+Makefile
+autom4te.cache/
+config.log
+config.status
+configure
+libzlib1.1.1.so
+pkgIndex.tcl
+zlib.o
+
